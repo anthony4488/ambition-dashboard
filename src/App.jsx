@@ -1,17 +1,19 @@
 import React, { useState } from 'react'
 import { TabBar } from './components'
+import Timetable from './Timetable'
 import F2FCalc from './F2FCalc'
 import OnlineCalc from './OnlineCalc'
 import Attendance from './Attendance'
 
 const tabs = [
+  { id: 'timetable', label: 'Timetable' },
   { id: 'f2f', label: 'F2F calculator' },
   { id: 'online', label: 'Online calculator' },
   { id: 'attendance', label: 'Attendance tracker' },
 ]
 
 export default function App() {
-  const [active, setActive] = useState('f2f')
+  const [active, setActive] = useState('timetable')
 
   return (
     <div style={{
@@ -42,6 +44,7 @@ export default function App() {
       <TabBar tabs={tabs} active={active} onChange={setActive} />
 
       <div style={{ animation: 'fadeUp 0.25s ease both' }} key={active}>
+        {active === 'timetable' && <Timetable />}
         {active === 'f2f' && <F2FCalc />}
         {active === 'online' && <OnlineCalc />}
         {active === 'attendance' && <Attendance />}
