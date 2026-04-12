@@ -175,7 +175,7 @@ export function getTimetableStats() {
     totalSessions,
     totalAthletes,
     weeklyRevenue,
-    monthlyRevenue: weeklyRevenue * 4.33,
+    monthlyRevenue: weeklyRevenue * (44 / 12),
     availableSlots,
     filledSlots,
     fillRate: totalSessions > 0 ? (filledSlots / (filledSlots + availableSlots)) * 100 : 0,

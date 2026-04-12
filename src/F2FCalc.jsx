@@ -43,7 +43,7 @@ export default function F2FCalc() {
         <div>
           <SectionHeader>Revenue & capacity</SectionHeader>
           <Slider label="Weekly rate / client" value={rate} onChange={setRate} min={50} max={200} step={10} format={fmt} />
-          <Slider label="Avg retention (weeks)" value={ret} onChange={setRet} min={4} max={52} step={1} format={v => v + ' wk'} />
+          <Slider label="Avg retention (weeks)" value={ret} onChange={setRet} min={4} max={44} step={1} format={v => v + ' wk'} />
           <Slider label="Max capacity" value={cap} onChange={setCap} min={20} max={300} step={5} format={v => v + ' clients'} />
         </div>
       </div>

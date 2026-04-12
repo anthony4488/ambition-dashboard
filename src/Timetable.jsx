@@ -55,7 +55,7 @@ export default function Timetable() {
     })
     return {
       totalSessions, totalAthletes, weeklyRevenue,
-      monthlyRevenue: weeklyRevenue * 4.33,
+      monthlyRevenue: weeklyRevenue * (44 / 12),
       availableSlots, filledSlots,
       fillRate: (filledSlots + availableSlots) > 0
         ? (filledSlots / (filledSlots + availableSlots)) * 100 : 0,
@@ -377,8 +377,8 @@ export default function Timetable() {
             <div style={{ fontSize: 11, color: 'var(--text-muted)' }}>per month (est.)</div>
           </div>
           <div>
-            <div style={{ fontSize: 22, fontWeight: 700, color: 'var(--green)' }}>{fmt(stats.monthlyRevenue * 12)}</div>
-            <div style={{ fontSize: 11, color: 'var(--text-muted)' }}>annual (est.)</div>
+            <div style={{ fontSize: 22, fontWeight: 700, color: 'var(--green)' }}>{fmt(stats.weeklyRevenue * 44)}</div>
+            <div style={{ fontSize: 11, color: 'var(--text-muted)' }}>annual (44 wks)</div>
           </div>
         </div>
         <div style={{
